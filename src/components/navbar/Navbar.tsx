@@ -1,8 +1,10 @@
 import React from 'react';
 import NavbarItem from './NavbarItem';
 import styled from 'styled-components';
+import LanguageSelection from 'components/language/LanguageSelection';
 
 const StyledNavbar = styled.nav`
+    box-sizing: border-box;
     position: fixed;
     top: 0;
     width: 100%;
@@ -11,6 +13,10 @@ const StyledNavbar = styled.nav`
     padding-bottom: 10px;
     color: ${({ theme }) => theme.mainColor};
     font-family: ${({ theme }) => theme.mainFont};
+`;
+
+const Navs = styled.div`
+    padding: 1rem;
 `;
 
 
@@ -26,7 +32,11 @@ const links = [
 const Navbar = () => {
     return (
         <StyledNavbar>
+            <LanguageSelection />
+            <Navs>
             {links.map( text => <NavbarItem text={text} />)}
+            </Navs>
+            
         </StyledNavbar>
     );
 };

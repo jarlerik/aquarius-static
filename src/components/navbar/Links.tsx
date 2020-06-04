@@ -14,10 +14,10 @@ const links = [
 ]
 
 const StyledLinks = styled.div<{ visible: boolean }>`
-    padding: 1rem;
+    padding: .5rem;
     width: 80%;
     opacity: ${({ visible }) => visible ? 1 : 0};
-    transition: opacity 1s ease-in-out;
+    transition: opacity ${({ visible }) => visible ? '1s' : '0.2s'} ease-in;
 `;
 
 const Links = () => {

@@ -1,10 +1,9 @@
 import React from 'react';
+import Hero from '../components/hero/Hero';
 
 const Content = () => {
     return (
-        <div>
-            CONTENT
-        </div>
+        <Hero/>
     );
 };
 

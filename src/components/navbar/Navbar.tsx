@@ -18,8 +18,8 @@ const StyledNavbar = styled.nav<{ open: boolean }>`
     font-family: ${({ theme }) => theme.mainFont};
     display: flex;
     flex-direction: row;
-    height: ${({ open}) => open ? '150px' : '90px'};
-    transition: height 1s ease-in-out;
+    height: ${({ open}) => open ? '155px' : '90px'};
+    transition: height 0.3s linear;
 `;
 
 const Actions = styled.div`

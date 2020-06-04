@@ -1,9 +1,12 @@
 import React from 'react';
-import NavbarItem from './NavbarItem';
 import styled from 'styled-components';
 import LanguageSelection from 'components/language/LanguageSelection';
+import NavbarActions from './NavbarActions';
+import Links from './Links';
+import { useSelector } from 'react-redux';
+import { RootState } from 'src/store/createStore';
 
-const StyledNavbar = styled.nav`
+const StyledNavbar = styled.nav<{ open: boolean }>`
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -13,29 +16,26 @@ const StyledNavbar = styled.nav`
     padding-bottom: 10px;
     color: ${({ theme }) => theme.mainColor};
     font-family: ${({ theme }) => theme.mainFont};
+    display: flex;
+    flex-direction: row;
+    height: ${({ open}) => open ? '150px' : '90px'};
+    transition: height 1s ease-in-out;
 `;
 
-const Navs = styled.div`
-    padding: 1rem;
+const Actions = styled.div`
+
 `;
-
-
-const links = [
-    'ajankohtaista',
-    'ryhmäliikunta',
-    'personal trainer',
-    'yrityspalvelut',
-    'hinnasto ja yhteystiedot',
-    'aikataulut',
-]
 
 const Navbar = () => {
+    const navbarIsOpen = useSelector(({ navbar }: RootState) => navbar.open)
     return (
-        <StyledNavbar>
+        <StyledNavbar open={navbarIsOpen}>
+            <Links />
+            <Actions>
             <LanguageSelection />
-            <Navs>
-            {links.map( text => <NavbarItem text={text} />)}
-            </Navs>
+            <NavbarActions />
+            </Actions>
+            
             
         </StyledNavbar>
     );

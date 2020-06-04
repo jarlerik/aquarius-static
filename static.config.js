@@ -17,6 +17,7 @@ export default {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="https://fonts.googleapis.com/css?family=Amiri|Montserrat" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
         <link href="./main.css" rel="stylesheet"/>
       </Head>
       <Body>{children}</Body>

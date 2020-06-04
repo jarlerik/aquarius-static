@@ -10,7 +10,6 @@ const Flex = styled.div`
 `;
 
 const StyledLanguageSelection = styled(Flex)`
-    float: right;
     text-transform: uppercase;
 `;
 
